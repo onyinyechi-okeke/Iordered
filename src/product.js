@@ -12,18 +12,19 @@ import product11 from "./assets/product11.png"
 
 
 export const product = [
-    { img: product1 },
-    { img: product2 },
-    { img: product3 },
-    { img: product4 },
-    { img: product5 },
-    { img: product6 },
-    { img: product7 },
-    { img: product8 },
-    { img: product9 },
-    { img: product10},
-    { img: product11 },
-    { img: product10}
+    { id: '1', img: product1, name: 'Sun-drenched Sanctuary', price:'95' },
+    { id: '2', img: product2, name: 'Minimalist Masterpiec', price:'95' },
+    { id: '3', img: product3, name: 'Industrial Chic Loft', price:'95' },
+    { id: '4', img: product4, name: 'Scandi-Inspired Living', price:'95' },
+    { id: '5', img: product5, name: 'Home Office Haven', price:'95' },
+    { id: '6', img: product6, name: 'Bohemian Rhapsody', price:'95' },
+    { id: '7', img: product7, name: 'Industrial Kitchen with Warmth', price:'95' },
+    { id: '8', img: product8, name: 'Gallery-Worthy Living Room', price:'95' },
+    { id: '9', img: product9, name: 'Tropical Oasis Patio', price:'95' },
+    { id: '10', img: product10, name: 'Mid-Century Modern Marvel', price:'95' },
+    { id: '11', img: product11, name: 'Jewel Toned Living Room', price:'95' },
+    { id: '12', img: product10, name: 'Modern Monochromatic Bedroom', price:'95' }
 ]
 
 export const CartProducts = [ product2, product1, product4, product6];
+
