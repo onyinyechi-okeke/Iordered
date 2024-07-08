@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import './App.css';
 import NavBar from "./components/NavBar";
@@ -9,7 +9,9 @@ import Cart from './components/Cart';
 function App() {
   const [shop, setShop] = useState(false);
 
+
   const openShop = () => {
+    window.scrollTo(0, 0);
     setShop(true);
   };
 
