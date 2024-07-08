@@ -20,7 +20,7 @@ function Pagination() {
         <section className='flex text-[#98a2b3] items-center gap-4 rounded-[6px]'>
             <p>Go to Page</p>
             <div className='border border-[#dod5dd] p-[4px]  md:p-[8px] rounded-[6px]'>
-            <select className='md:text-[16px] p-[4px] text-[13px]'>
+            <select className='md:text-[16px] p-[4px] text-[13px] border-none outline-none'>
                 <option>00</option>
             </select>
             </div>
