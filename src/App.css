@@ -20,5 +20,12 @@
     transform: translateY(-20px);
     transition: opacity 300ms, transform 300ms;
   }
-  
 
+  body.no-scroll {
+    overflow: hidden;
+  }
+  
+  .cart-aside {
+    height: 100vh;
+    overflow-y: auto;
+  }

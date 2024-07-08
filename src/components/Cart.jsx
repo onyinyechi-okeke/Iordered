@@ -8,11 +8,11 @@ import { CartProducts } from '../product';
 function Cart({closeShop}) {
   return (
     <main className='absolute w-full top-[104px] flex justify-end min-h-screen' style={{backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>
-        <aside className='bg-white z-50 lg:w-[46rem] w-full py-[37.51px] xs:px-[39.39px] xxs:px-[29px] min-h-screen'>
+        <aside className='bg-white z-50 lg:w-[46rem] w-full py-[37.51px] xs:px-[39.39px] xxs:px-[29px] min-h-screen cart-aside'>
              <section className='flex items-center justify-between md:pb-[74px] pb-[44px]'>
                 <div className='flex items-center gap-[12px] '>
-                    <p className='text-[27px] font-semibold'>My Cart</p>
-                    <div className='bg-[#e60023] text-white px-[12px] py-[6px] rounded-[28.13px] '>4</div>
+                    <p className='text-[20px] md:text-[27px] font-semibold'>My Cart</p>
+                    <div className='bg-[#e60023] text-white md:px-[12px] md:py-[6px] md:rounded-[28.13px] px-[8px] py-[4px] rounded-[95%] '>4</div>
                 </div>
                 <img src={cancel} alt='an icon' className='cursor-pointer' onClick={closeShop}/>
             </section>
@@ -47,7 +47,7 @@ function Cart({closeShop}) {
               </section>
 
               <section>
-                <button className='w-full px-[18px] py-[12px] md:px-[23px] md:py-[15px] bg-[#e60023] text-white rounded-[28.13px] mt-6 mb-10 text-[12px] md:text-[16px] '>Proceed to Checkout</button>
+                <button className='w-full px-[18px] py-[12px] md:px-[23px] md:py-[15px] bg-[#e60023] text-white rounded-[28.13px] mt-6 mb-32 text-[12px] md:text-[16px] '>Proceed to Checkout</button>
               </section>
         </aside>
     </main>

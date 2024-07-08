@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import './App.css';
 import NavBar from "./components/NavBar";
@@ -16,6 +16,14 @@ function App() {
   const closeShop = () => {
     setShop(false);
   };
+
+  useEffect(() => {
+    if (shop) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [shop]);
 
   return (
     <div>
