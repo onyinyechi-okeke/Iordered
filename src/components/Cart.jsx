@@ -47,7 +47,7 @@ function Cart({closeShop}) {
               </section>
 
               <section>
-                <button className='w-full px-[18px] py-[12px] md:px-[23px] md:py-[15px] bg-[#e60023] text-white rounded-[28.13px] mt-6 mb-32 text-[12px] md:text-[16px] '>Proceed to Checkout</button>
+                <button className='w-full px-[18px] py-[12px] md:px-[23px] md:py-[15px] bg-[#e60023] text-white rounded-[28.13px] mt-6 mb-44 text-[12px] md:text-[16px] '>Proceed to Checkout</button>
               </section>
         </aside>
     </main>
