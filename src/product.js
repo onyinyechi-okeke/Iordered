@@ -13,7 +13,7 @@ import product11 from "./assets/product11.png"
 
 export const product = [
     { id: '1', img: product1, name: 'Sun-drenched Sanctuary', price:'95' },
-    { id: '2', img: product2, name: 'Minimalist Masterpiec', price:'95' },
+    { id: '2', img: product2, name: 'Minimalist Masterpiece', price:'95' },
     { id: '3', img: product3, name: 'Industrial Chic Loft', price:'95' },
     { id: '4', img: product4, name: 'Scandi-Inspired Living', price:'95' },
     { id: '5', img: product5, name: 'Home Office Haven', price:'95' },

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import search from '../../assets/search.svg';
 import ProductCard from './ProductCard';
 import Navigation from '../../components/Navigation';
-import { product } from '../../product'; 
+import { product } from '../../product'; // Assuming product is an array of items
 
 function Modern({ addToCart }) {
+  const N = 'Categories';
   const C = 'Modern';
 
   const [searchTerm, setSearchTerm] = useState('');
@@ -14,14 +15,14 @@ function Modern({ addToCart }) {
     console.log(`Added ${product.name} to cart.`);
   };
 
-  
+  // Filter products based on search term
   const filteredProducts = product.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <main className='pt-[137px] lg:px-[124px] md:px-[64px] px-[42px] relative pb-10'>
-      <Navigation  C={C} />
+      <Navigation N={N} C={C} />
       <section className='flex mt-[25px] md:mt-[68px] mb-[20px] md:mb-[30px] gap-7 justify-between'>
         <div>
           <p className='md:text-[28px] tracking-tighter font-[700]'>Modern</p>
@@ -41,11 +42,17 @@ function Modern({ addToCart }) {
         </div>
       </section>
 
-      <div className='grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 w-full gap-[24px]'>
-        {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} handleAddToCart={handleAddToCart} />
-        ))}
-      </div>
+      {filteredProducts.length > 0 ? (
+        <div className='grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 w-full gap-[24px]'>
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} handleAddToCart={handleAddToCart} />
+          ))}
+        </div>
+      ) : (
+        <div className='text-center mt-10'>
+          <p className='text-[18px] font-[500]'>No items found matching "{searchTerm}".</p>
+        </div>
+      )}
     </main>
   );
 }

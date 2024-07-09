@@ -24,7 +24,7 @@ function Cart({ closeShop, cartItems, updateQuantity, removeFromCart }) {
         <section className='flex items-center justify-between md:pb-[74px] pb-[44px]'>
           <div className='flex items-center gap-[12px] '>
             <p className='text-[20px] md:text-[27px] font-semibold'>My Cart</p>
-            <div className='bg-[#e60023] text-white md:px-[12px] md:py-[6px] md:rounded-[28.13px] px-[8px] py-[4px] rounded-[95%] '>{cartItems.length}</div>
+            <div className='bg-[#e60023] text-white md:px-[12px] md:py-[6px] rounded-[50%] px-[8px] py-[2px] '>{cartItems.length}</div>
           </div>
           <img src={cancel} alt='close icon' className='cursor-pointer' onClick={closeShop} />
         </section>
@@ -57,6 +57,12 @@ function Cart({ closeShop, cartItems, updateQuantity, removeFromCart }) {
 
         {cartItems.length > 0 && (
           <section>
+            <section className='flex justify-between border-t-2 border-b-2 border-[#f0f2f5] pt-10 pb-4'>
+          <p className='text-[#667185] text-[12px] md:text-[16px] '>subtotal:</p>
+          <p className='text-[13px] font-[700]'>$<span className='text-[18px] align-sub'>{cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)}</span>.00</p>
+          </section>
+
+
             <button onClick={() => { openCheckout(); closeShop(); }} className='w-full px-[18px] py-[12px] md:px-[23px] md:py-[15px] bg-[#e60023] cursor-pointer text-white rounded-[28.13px] mt-6 mb-44 text-[12px] md:text-[16px] delay-100 ease-in-out hover:bg-white hover:text-[#e60023] hover:border-[3px] border-[#e60023]'>
               Proceed to Checkout
             </button>

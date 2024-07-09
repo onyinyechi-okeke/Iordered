@@ -18,7 +18,7 @@ function ProductCard({ product, handleAddToCart }) {
 
   return (
     <div className='2xl:min-w-[540px]' key={id}>
-      <img className='2xl:min-w-[100%] 2xl:h-[372px]' src={img} alt={name} />
+      <img className='min-w-[100%] 2xl:h-[372px]' src={img} alt={name} />
 
       <div className='flex justify-between mt-4'>
         <p className='font-[500] text-[16px] xxs:text-[14px]'>{name}</p>
