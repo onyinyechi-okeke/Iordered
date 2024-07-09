@@ -125,7 +125,7 @@ function Checkout({ cartItems }) {
                         </section>
                     </section>
 
-                    <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px] xl:mt-1 mt-8 py-[37.51px] xxs:px-[39.39px]'>
+                    <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px] xl:mt-1 mt-8 py-[37.51px] xxs:px-[29.39px]'>
                         <p className='text-[20px] md:text-[23px] font-semibold'>Billing and Shipping</p>
                         <form onSubmit={handleSubmit}>
                         <div className='md:grid grid-cols-2 gap-6 justify-between mt-6 w-full'>
@@ -184,8 +184,8 @@ function Checkout({ cartItems }) {
                     </section>
                 </section>
 
-                <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px] xl:w-[40%] w-full mt-8 xl:mt-0 h-[80%] pt-[37.51px] xl:pb-12 pb-16 xxs:px-[39.39px]'>
-                    <p className='text-[20px] md:text-[23px] font-semibold'>Payment Information</p>
+                <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px] xl:w-[40%] w-full mt-8 xl:mt-0 h-[80%] pt-[37.51px] xl:pb-12 pb-16 xxs:px-[25.39px]'>
+                    <p className='text-[20px] md:text-[23px] text-[18px]font-semibold'>Payment Information</p>
 
                     <div className='pt-8 border-b-[0.92px] border-[#d0d5dd]'>
                         <p className='text-[18px] font-semibold'>Apply Discount</p>
@@ -199,16 +199,16 @@ function Checkout({ cartItems }) {
                         <p className='text-[18px] font-semibold pt-4'>Pay with</p>
                         <div className='flex gap-3 cursor-pointer pt-4' onClick={() => handlePaymentClick('card')}>
                             <img src={selectedPayment === 'card' ? checkedImg : uncheckedImg} alt='an icon' />
-                            <p className='text-[18px] font-[500]'>Debit or Credit Card</p>
+                            <p className='md:text-[18px] text-[14px] font-[500]'>Debit or Credit Card</p>
                         </div>
                         <div className='flex gap-3 cursor-pointer pt-4' onClick={() => handlePaymentClick('delivery')}>
                             <img src={selectedPayment === 'delivery' ? checkedImg : uncheckedImg} alt='an icon' />
-                            <p className='text-[18px] font-[500]'>Pay on Delivery</p>
+                            <p className='md:text-[18px] text-[14px] font-[500]'>Pay on Delivery</p>
                         </div>
                         <p className='text-[18px] font-semibold pt-6 pb-4'>Delivery Time</p>
                         <div className='flex gap-3 cursor-pointer pb-5' onClick={handleDeliveryClick}>
                             <img src={deliveryChecked ? checkedImg : uncheckedImg} alt='an icon' />
-                            <p className=' font-[500] text-[18px] '>Right Now</p>
+                            <p className=' font-[500] md:text-[18px] text-[14px]'>Right Now</p>
                         </div>
                     </div>
 
