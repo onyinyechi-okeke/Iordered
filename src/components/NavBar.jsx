@@ -15,7 +15,7 @@ function NavBar({openShop}) {
     
     <nav className='w-full fixed top-0 left-0 h-[99px] md:h-[104px] bg-white border-b-[1px] border-[#f2fof5] px-[39px] md:px-[60px] lg:px-[112px] flex items-center justify-between z-[999]'>
 
-        <figure onClick={openHome}>
+        <figure onClick={openHome} className='cursor-pointer'>
             <img src={logo} alt='a logo' />
         </figure>
 
