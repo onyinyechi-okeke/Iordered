@@ -104,7 +104,7 @@ function Checkout({ cartItems }) {
             <section className='xl:w-[57%] w-full'>
                 <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px]'>
 
-                <section className='pt-[37.51px] xs:px-[25.39px] px-[39.39px] '>
+                <section className='pt-[37.51px] xs:px-[25.39px] px-[39.39px] xxs:px-[16.39px]'>
                     <div className='flex items-center gap-[12px] mb-8'>
                     <p className='text-[14px] md:text-[23px] font-semibold'>Your Order(s)</p>
                     <div className='bg-[#e60023] text-white md:px-[12px] md:py-[6px] rounded-[50%] px-[8px] py-[2px] md:rounded-[28.13px] '>{cartItems.length}</div>
@@ -116,8 +116,8 @@ function Checkout({ cartItems }) {
 
                         <div className='w-[85%] md:pr-20'>
                         <div className='flex font-semibold justify-between items-center'>
-                        <p className='text-[12px] md:text-[19px] '>{item.name}</p>
-                        <p className='text-[12px] md:text-[14px] '>$<span className='text-[20px] align-sub'>{item.price * item.quantity}</span>.00</p>
+                        <p className='text-[12px] md:text-[19px]'>{item.name}</p>
+                        <p className='text-[12px] md:text-[14px]'>$<span className='md:text-[20px]text-[16px] align-sub'>{item.price * item.quantity}</span>.00</p>
                         </div>
                         </div>
                         </div>
@@ -125,7 +125,7 @@ function Checkout({ cartItems }) {
                         </section>
                     </section>
 
-                    <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px] xl:mt-1 mt-8 py-[37.51px] xs:px-[39.39px]'>
+                    <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px] xl:mt-1 mt-8 py-[37.51px] xxs:px-[39.39px]'>
                         <p className='text-[20px] md:text-[23px] font-semibold'>Billing and Shipping</p>
                         <form onSubmit={handleSubmit}>
                         <div className='md:grid grid-cols-2 gap-6 justify-between mt-6 w-full'>
@@ -184,7 +184,7 @@ function Checkout({ cartItems }) {
                     </section>
                 </section>
 
-                <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px] xl:w-[40%] w-full mt-8 xl:mt-0 h-[80%] pt-[37.51px] xl:pb-12 pb-16 xs:px-[39.39px]'>
+                <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px] xl:w-[40%] w-full mt-8 xl:mt-0 h-[80%] pt-[37.51px] xl:pb-12 pb-16 xxs:px-[39.39px]'>
                     <p className='text-[20px] md:text-[23px] font-semibold'>Payment Information</p>
 
                     <div className='pt-8 border-b-[0.92px] border-[#d0d5dd]'>
