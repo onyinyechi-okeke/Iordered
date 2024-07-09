@@ -85,7 +85,7 @@ function Checkout({ cartItems }) {
         }
     };
 
-    const subtotal = cartItems.reduce((acc, item) => acc + Number(item.price), 0);
+    const subtotal = cartItems.reduce((acc, item) => acc + Number(item.price*item.quantity), 0);
     const taxRate = 0.1;
     const tax = subtotal * taxRate;
     const total = subtotal + tax;
