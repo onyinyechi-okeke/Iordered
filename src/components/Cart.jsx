@@ -5,7 +5,7 @@ import add from "../assets/add.png";
 import minus from "../assets/minus.png";
 import { useNavigate } from 'react-router-dom';
 
-function Cart({ closeShop, cartItems, updateQuantity, removeFromCart }) {
+function Cart({ closeShop, cartItems, updateQuantity, removeFromCart, onIncrement, onDecrement }) {
   const navigate = useNavigate();
 
   const openCheckout = () => {
@@ -38,13 +38,13 @@ function Cart({ closeShop, cartItems, updateQuantity, removeFromCart }) {
               <div className='w-[60%]'>
                 <div className='flex font-semibold justify-between mb-4'>
                   <p className='text-[12px] md:text-[16px] '>{item.name}</p>
-                  <p className='text-[13px] font-[700]'>$<span className='text-[18px] align-sub'>{item.price}</span>.00</p>
+                  <p className='text-[13px] font-[700]'>$<span className='text-[18px] align-sub'>{item.price * item.quantity}</span>.00</p>
                 </div>
                 <div className='flex items-center justify-between'>
                   <div className='flex border border-[#f0f2f5] bg-[#f9fafb] rounded-[37.51px] gap-2 px-2 md:gap-4 md:px-3 md:py-1 items-center cursor-pointer'>
-                    <img src={minus} alt='decrement' onClick={() => handleDecrement(item)}  />
+                    <img src={minus} alt='decrement' onClick={() => {handleDecrement(item), onDecrement(item.id)}}  />
                     <p className='text-[#e60023]'>{item.quantity}</p>
-                    <img src={add} alt='increment' onClick={() => updateQuantity(item.id, item.quantity + 1)} />
+                    <img src={add} alt='increment' onClick={() => {updateQuantity(item.id, item.quantity + 1), onIncrement(item.id)}} />
                   </div>
                   <figure>
                     <img src={bin} alt='delete' className='w-[15px] md:w-[25px] cursor-pointer' onClick={() => removeFromCart(item.id)} />

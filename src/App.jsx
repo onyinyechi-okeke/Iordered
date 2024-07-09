@@ -53,7 +53,21 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
+  const handleIncrement = (itemId) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, quantity: item.quantity  } : item
+      )
+    );
+  };
 
+  const handleDecrement = (itemId) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, quantity: item.quantity } : item
+      )
+    );
+  };
 
   useEffect(() => {
     if (shop) {
@@ -76,7 +90,7 @@ function App() {
         classNames="cart"
         unmountOnExit
       >
-        <Cart closeShop={closeShop} cartItems={cartItems} updateQuantity={updateQuantity} removeFromCart={removeFromCart}/>
+        <Cart closeShop={closeShop} cartItems={cartItems} updateQuantity={updateQuantity} removeFromCart={removeFromCart} onIncrement={handleIncrement} onDecrement={handleDecrement}/>
       </CSSTransition>
       <Footer />
     </div>

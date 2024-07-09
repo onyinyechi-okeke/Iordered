@@ -117,7 +117,7 @@ function Checkout({ cartItems }) {
                         <div className='w-[85%] md:pr-20'>
                         <div className='flex font-semibold justify-between items-center'>
                         <p className='text-[12px] md:text-[19px] '>{item.name}</p>
-                        <p className='text-[12px] md:text-[14px] '>$<span className='text-[20px] align-sub'>{item.price}</span>.00</p>
+                        <p className='text-[12px] md:text-[14px] '>$<span className='text-[20px] align-sub'>{item.price * item.quantity}</span>.00</p>
                         </div>
                         </div>
                         </div>
