@@ -208,7 +208,7 @@ function Checkout({ cartItems }) {
                         <p className='text-[18px] font-semibold pt-6 pb-4'>Delivery Time</p>
                         <div className='flex gap-3 cursor-pointer pb-5' onClick={handleDeliveryClick}>
                             <img src={deliveryChecked ? checkedImg : uncheckedImg} alt='an icon' />
-                            <p className=' font-[500]'>Right Now</p>
+                            <p className=' font-[500] text-[18px] '>Right Now</p>
                         </div>
                     </div>
 
