@@ -97,7 +97,7 @@ function Checkout({ cartItems }) {
     ];
 
     return (
-        <main className='pt-[137px] relative lg:px-[124px] md:px-[64px] px-[22px] mb-10'>
+        <main className='pt-[137px] relative lg:px-[124px] md:px-[64px] px-[22px] mb-10 max-w-[1440px] mx-auto'>
             <Navigation C={C} />
 
             <section className='py-[66px] xl:flex justify-between'>
@@ -184,7 +184,7 @@ function Checkout({ cartItems }) {
                     </section>
                 </section>
 
-                <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px] xl:w-[40%] w-full mt-8 xl:mt-0 h-[80%] pt-[37.51px] xl:pb-12 pb-16 xxs:px-[25.39px]'>
+                <section className='border-[0.92px] border-[#e4e7e6] rounded-[9.22px] xl:w-[40%] w-full mt-8 xl:mt-0 h-[80%] pt-[37.51px] pb-12 xxs:px-[25.39px]'>
                     <p className='text-[20px] md:text-[23px] text-[18px]font-semibold'>Payment Information</p>
 
                     <div className='pt-8 border-b-[0.92px] border-[#d0d5dd]'>

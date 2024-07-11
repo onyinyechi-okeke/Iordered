@@ -21,7 +21,7 @@ function Modern({ addToCart }) {
   );
 
   return (
-    <main className='pt-[137px] lg:px-[124px] md:px-[64px] px-[42px] relative pb-10'>
+    <main className='pt-[137px] lg:px-[124px] md:px-[64px] px-[42px] relative pb-10 max-w-[1440px] mx-auto '>
       <Navigation N={N} C={C} />
       <section className='flex mt-[25px] md:mt-[68px] mb-[20px] md:mb-[30px] gap-7 justify-between'>
         <div>

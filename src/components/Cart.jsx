@@ -19,8 +19,9 @@ function Cart({ closeShop, cartItems, updateQuantity, removeFromCart, onIncremen
   };
 
   return (
-    <main className='absolute w-full top-[104px] flex justify-end min-h-screen' style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
-      <aside className='bg-white z-50 lg:w-[46rem] w-full py-[37.51px] xs:px-[39.39px] xxs:px-[29px] min-h-screen cart-aside'>
+    <main className='absolute w-full top-[104px] flex justify-end min-h-screen lg:right-[7%] 2xl:right-[13%]' style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
+      <aside className='bg-white z-50 lg:w-[553px] w-full py-[37.51px] xs:px-[39.39px] xxs:px-[29px] min-h-screen cart-aside'>
+        <section className='mx-auto'>
         <section className='flex items-center justify-between md:pb-[74px] pb-[44px]'>
           <div className='flex items-center gap-[12px] '>
             <p className='text-[20px] md:text-[27px] font-semibold'>My Cart</p>
@@ -34,7 +35,7 @@ function Cart({ closeShop, cartItems, updateQuantity, removeFromCart, onIncremen
         ) : (
           cartItems.map((item, index) => (
             <section key={index} className='w-full gap-4 flex justify-between items-center pb-6'>
-              <img src={item.img} alt='product' className='2xl:w-[250px] 2xl:h-[178px] xs:w-[160px] xs:h-[148px] md:w-[185px] md:h-[168px] rounded-[9px] xxs:w-[120px] xxs:h-[100px]' />
+              <img src={item.img} alt='product' className='md:w-[184px] 2xl:h-[178px] xs:w-[160px] xs:h-[148px]  md:h-[168px] rounded-[9px] xxs:w-[120px] xxs:h-[100px]' />
               <div className='w-[60%]'>
                 <div className='flex font-semibold justify-between mb-4'>
                   <p className='text-[12px] md:text-[16px] '>{item.name}</p>
@@ -68,8 +69,9 @@ function Cart({ closeShop, cartItems, updateQuantity, removeFromCart, onIncremen
             </button>
           </section>
         )}
-        
+        </section>
       </aside>
+      
     </main>
   );
 }
