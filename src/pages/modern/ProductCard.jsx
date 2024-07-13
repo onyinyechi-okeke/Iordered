@@ -30,7 +30,7 @@ function ProductCard({ product, handleAddToCart }) {
   return (
     <div  className='cursor-pointer hover:scale-105 ease-in-out delay-150'>
       <img
-        className='min-w-[100%] 2xl:h-[346.67px] h-[301px] rounded-lg cursor-pointer' onClick={handleCardClick}
+        className='min-w-[100%] 2xl:h-[346.67px] h-[250px] rounded-lg cursor-pointer' onClick={handleCardClick}
         src={photoUrl} 
         alt={name}
       />
