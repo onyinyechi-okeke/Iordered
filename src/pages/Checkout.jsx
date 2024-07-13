@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Navigation from '../components/Navigation';
 import checkedImg from "../assets/checked.png";
 import uncheckedImg from "../assets/unchecked.png";
+import { CartContext } from '../CartContext';
 
-function Checkout({ cartItems }) {
+function Checkout() {
+    const { cartItems } = useContext(CartContext);
     const [selectedPayment, setSelectedPayment] = useState(null);
     const [deliveryChecked, setDeliveryChecked] = useState(false);
     const [formData, setFormData] = useState({

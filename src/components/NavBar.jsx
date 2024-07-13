@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import logo from "../assets/hero.svg"
 import bigsearch from "../assets/bigsearch.svg"
 import cart from "../assets/newcart.svg"
 import { useNavigate } from 'react-router-dom'
+import { CartContext } from '../CartContext'
 
-function NavBar({openShop}) {
+function NavBar() {
+  const { openShop } = useContext(CartContext);
    const navigate= useNavigate();
 
   const openHome = () =>{

@@ -1,24 +1,39 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import rating from "../../assets/rate.svg";
-import cart from "../../assets/bag.svg";
+import AddtoCart from '../../components/AddtoCart';
 
 function ProductCard({ product, handleAddToCart }) {
-  const { id, img, name, price } = product;
+  const { name, current_price, unique_id, photos } = product;
   const [added, setAdded] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     handleAddToCart(product);
     setAdded(true);
 
-    
     setTimeout(() => {
       setAdded(false);
     }, 1000);
   };
 
+  const handleCardClick = () => {
+    navigate(`/product/${unique_id}`);
+  };
+
+  
+  const photoUrl = `https://api.timbu.cloud/images/${photos[0].url}`;
+
+
+  const price = current_price.length > 0 ? current_price[0].USD[0] : 'N/A';
+
   return (
-    <div key={id}>
-      <img className='min-w-[100%]' src={img} alt={name} />
+    <div  className='cursor-pointer hover:scale-105 ease-in-out delay-150'>
+      <img
+        className='min-w-[100%] h-[346.67px] rounded-lg cursor-pointer' onClick={handleCardClick}
+        src={photoUrl} 
+        alt={name}
+      />
 
       <div className='flex justify-between mt-4'>
         <p className='font-[500] text-[16px] xxs:text-[14px]'>{name}</p>
@@ -32,13 +47,7 @@ function ProductCard({ product, handleAddToCart }) {
         <p className='font-[400] text-[14px]'>(90)</p>
       </div>
 
-      <button
-        onClick={handleClick}
-        className={`flex items-center border-[2px] border-[#475367] hover:scale-105 delay-150 ease-in-out rounded-2xl px-[10px] py-[6px] md:px-[12px] md:py-[8px] gap-[8px] text-[14px] text-[#475367] font-[600] mb-8 md:mb-2 ${added ? 'cursor-not-allowed' : ''}`}
-        disabled={added} // Disable button when added is true
-      >
-        <img src={cart} alt='cart icon' /> {added ? 'Added' : 'Add to Cart'}
-      </button>
+      <AddtoCart handleClick={handleClick} added={added} />
     </div>
   );
 }
