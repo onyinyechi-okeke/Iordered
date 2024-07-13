@@ -19,13 +19,13 @@ function Cart() {
   return (
     <main className='absolute w-full top-[104px] flex justify-end min-h-screen lg:right-[7%] 2xl:right-[13%]' style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
       <aside className='bg-white z-50 lg:w-[553px] w-full py-[37.51px] xs:px-[39.39px] xxs:px-[29px] min-h-screen cart-aside'>
-        <section className='mx-auto'>
-        <section className='flex items-center justify-between md:pb-[74px] pb-[44px]'>
-          <div className='flex items-center gap-[12px] '>
-            <p className='text-[20px] md:text-[27px] font-semibold'>My Cart</p>
-            <div className='bg-[#e60023] text-white md:px-[12px] md:py-[6px] rounded-[50%] px-[8px] py-[2px] '>{cartItems.length}</div>
+      <section className='mx-auto'>
+      <section className='flex items-center justify-between md:pb-[74px] pb-[44px]'>
+        <div className='flex items-center gap-[12px] '>
+          <p className='text-[20px] md:text-[27px] font-semibold'>My Cart</p>
+          <div className='bg-[#e60023] text-white md:px-[12px] md:py-[6px] rounded-[50%] px-[8px] py-[2px] '>{cartItems.length}</div>
           </div>
-          <img src={cancel} alt='close icon' className='cursor-pointer' onClick={closeShop} />
+         <img src={cancel} alt='close icon' className='cursor-pointer' onClick={closeShop} />
         </section>
 
         {cartItems.length === 0 ? (
@@ -33,18 +33,18 @@ function Cart() {
         ) : (
           cartItems.map((item) => (
             <section key={item.unique_id} className='w-full gap-4 flex justify-between items-center pb-6'>
-              <img src={item.img} alt='product' className='md:w-[184px] 2xl:h-[178px] xs:w-[160px] xs:h-[148px]  md:h-[168px] rounded-[9px] xxs:w-[120px] xxs:h-[100px]' />
-              <div className='w-[60%]'>
-                <div className='flex font-semibold justify-between mb-4'>
-                  <p className='text-[12px] md:text-[16px] '>{item.name}</p>
-                  <p className='text-[13px] font-[700]'>$<span className='text-[18px] align-sub'>{item.price * item.quantity}</span>.00</p>
-                </div>
-                <div className='flex items-center justify-between'>
-                  <Crement item={item} />
-                  <figure>
-                    <img src={bin} alt='delete' className='w-[15px] md:w-[25px] cursor-pointer' onClick={() => removeFromCart(item.unique_id)} />
-                  </figure>
-                </div>
+            <img src={item.img} alt='product' className='md:w-[184px] 2xl:h-[178px] xs:w-[160px] xs:h-[148px]  md:h-[168px] rounded-[9px] xxs:w-[120px] xxs:h-[100px]' />
+            <div className='w-[60%]'>
+            <div className='flex font-semibold justify-between mb-4'>
+             <p className='text-[12px] md:text-[16px] '>{item.name}</p>
+             <p className='text-[13px] font-[700]'>$<span className='text-[18px] align-sub'>{item.price * item.quantity}</span>.00</p>
+             </div>
+              <div className='flex items-center justify-between'>
+              <Crement item={item} />
+              <figure>
+              <img src={bin} alt='delete' className='w-[15px] md:w-[25px] cursor-pointer' onClick={() => removeFromCart(item.unique_id)} />
+              </figure>
+              </div>
               </div>
             </section>
           ))
