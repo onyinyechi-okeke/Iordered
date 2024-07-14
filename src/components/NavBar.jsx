@@ -12,6 +12,12 @@ function NavBar() {
   const openHome = () =>{
     navigate('/')
   }
+
+  const handleOpenShop = () => {
+    openShop();
+    document.body.classList.add('no-scroll');
+  };
+
   return (
     <>
     
@@ -24,7 +30,7 @@ function NavBar() {
 
         <section className='flex items-center xs:gap-[32px]  xxs:gap-[12px] cursor-pointer'>
            <img src={bigsearch} alt='icons' className='hover:scale-105'/>
-           <img src={cart} alt='icons' className='hover:scale-105' onClick={openShop}/>
+           <img src={cart} alt='icons' className='hover:scale-105' onClick={handleOpenShop}/>
         </section>
         </section>
         </nav>

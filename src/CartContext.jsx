@@ -60,6 +60,11 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+  
+
   return (
     <CartContext.Provider
       value={{
@@ -72,6 +77,7 @@ export const CartProvider = ({ children }) => {
         handleIncrement,
         handleDecrement,
         addToCart,
+        clearCart,
       }}
     >
       {children}

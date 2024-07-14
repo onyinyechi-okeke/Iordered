@@ -4,7 +4,7 @@ import rating from "../../assets/rate.svg";
 import AddtoCart from '../../components/AddtoCart';
 
 function ProductCard({ product, handleAddToCart }) {
-  const { name, current_price, unique_id, photos } = product;
+  const { name, current_price, id, photos } = product;
   const [added, setAdded] = useState(false);
   const navigate = useNavigate();
 
@@ -18,7 +18,7 @@ function ProductCard({ product, handleAddToCart }) {
   };
 
   const handleCardClick = () => {
-    navigate(`/product/${unique_id}`);
+    navigate(`/product/${id}`);
   };
 
   

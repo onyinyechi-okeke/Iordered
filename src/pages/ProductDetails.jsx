@@ -21,7 +21,7 @@ function ProductDetails() {
     const fetchProductDetails = async () => {
       try {
         const products = await fetchProducts1(); 
-        const foundProduct = products.find((item) => item.unique_id === id);
+        const foundProduct = products.find((item) => item.id === id);
         if (foundProduct) {
           setSelectedProduct(foundProduct);
         } else {
@@ -73,14 +73,14 @@ function ProductDetails() {
   const price = current_price.length > 0 ? current_price[0].USD[0] : 'N/A';
 
   const handleNavigation = () => {
-    navigate(`/product/${selectedProduct.unique_id}`);
+    navigate(`/product/${selectedProduct.id}`);
   };
 
   return (
     <main className='pt-[169px] max-w-[1440px] mx-auto 2xl:px-[133px] md:px-[130px] xl:min-h-screen px-[20px]'>
       <section>
         <section className=' xl:flex 2xl:w-[1165px] xl:w-[1000px] xl:h-[516px] justify-between md:gap-10 md:w-full' >
-          <img src={gallery[0]} alt='Product' className='2xl:w-[547px] xl:w-[450px] xl:h-[507px] rounded-md w-full h-[240px] md:[400px]' />
+          <img src={gallery[0]} alt='Product' className='2xl:w-[547px] xl:w-[450px] xl:h-[507px] rounded-md w-full h-[240px]' />
 
           <section className='2xl:w-[570px] xl:[500px] xl:h-[516px] w-full '>
             <div className='text-[#101928]'>
