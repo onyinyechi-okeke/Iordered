@@ -11,6 +11,7 @@ import ProductDetails from './pages/ProductDetails';
 import { CartProvider, CartContext } from './CartContext';
 
 
+
 function AppContent() {
   const { shop } = useContext(CartContext);
 

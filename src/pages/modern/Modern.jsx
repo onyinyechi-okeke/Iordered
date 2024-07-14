@@ -5,7 +5,7 @@ import Navigation from '../../components/Navigation';
 import { CartContext } from '../../CartContext';
 import { fetchProducts } from '../../Api';
 import Loader from '../../components/Loader';
-import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'; 
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 function Modern() {
   const { addToCart } = useContext(CartContext);
@@ -17,7 +17,7 @@ function Modern() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10); 
+  const [pageSize, setPageSize] = useState(10);
 
   const getPageSize = (page) => {
     switch (page) {
@@ -52,25 +52,27 @@ function Modern() {
   }, [currentPage]);
 
   useEffect(() => {
-    setCurrentPage(1); 
+    setCurrentPage(1);
   }, [searchTerm]);
 
-  const handleAddToCart = (product) => {
-    const productDetails = {
-      ...product,
-      quantity: 1,
-      img: product.photos.length > 0 ? `https://api.timbu.cloud/images/${product.photos[0].url}` : '',
-      price: product.current_price.length > 0 ? product.current_price[0].USD[0] : 'N/A'
-    };
-    addToCart(productDetails);
-    console.log(`Added ${product.name} to cart.`);
+  
+ const handleAddToCart = (product) => {
+  const productDetails = {
+    ...product,
+    quantity: 1,
+    img: product.photos && product.photos.length > 0 ? `https://api.timbu.cloud/images/${product.photos[0].url}` : '',
+    price: (product.current_price && product.current_price.length > 0 && product.current_price[0].USD && product.current_price[0].USD.length > 0) ? product.current_price[0].USD[0] : 'N/A'
   };
+  addToCart(productDetails);
+};
 
-  const filteredProducts = products.filter((product) =>
+  
+
+  const filteredProducts = products?.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const pages = [1, 2, 3]; 
+  const pages = [1, 2, 3];
 
   const changePage = (page) => {
     console.log(`Changing to page ${page}`);
@@ -122,7 +124,7 @@ function Modern() {
       {filteredProducts.length > 0 ? (
         <div className='grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 w-full gap-[24px]'>
           {filteredProducts.map((product) => (
-            <ProductCard key={product.unique_id} product={product} handleAddToCart={handleAddToCart} />
+            <ProductCard key={product.id} product={product} handleAddToCart={handleAddToCart} />
           ))}
         </div>
       ) : (

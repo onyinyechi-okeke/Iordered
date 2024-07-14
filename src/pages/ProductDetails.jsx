@@ -6,43 +6,54 @@ import store from '../assets/store.svg';
 import CrementDetails from '../components/CrementDetails';
 import AddtoCartDetails from '../components/AddtoCartDetails';
 import { CartContext } from '../CartContext';
-import { fetchProducts1 } from '../Api'; 
+import { fetchProductsbyId } from '../Api'; 
 import Loader from '../components/Loader';
 
 function ProductDetails() {
-  const { id } = useParams(); 
+  const { id } = useParams();
   const { addToCart } = useContext(CartContext);
-  const [addedDetails, setAddedDetails] = useState(false);
-  const [quantity, setQuantity] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [addedDetails, setAddedDetails] = useState(false);
+  const [quantity, setQuantity] = useState(1); 
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const products = await fetchProducts1(); 
-        const foundProduct = products.find((item) => item.id === id);
-        if (foundProduct) {
-          setSelectedProduct(foundProduct);
+        const productData = await fetchProductsbyId(id);
+        if (productData && productData.items && productData.items.length > 0) {
+          
+          const product = productData.items.find(item => item.id === id);
+          if (product) {
+            setSelectedProduct(product);
+          } else {
+            setError('Product not found');
+          }
         } else {
-          console.error('Product not found');
+          setError('Product not found or invalid data');
         }
       } catch (error) {
-        console.error('Failed to fetch products:', error);
+        console.error('Failed to fetch product details:', error);
+        setError('Failed to fetch product details');
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchProductDetails();
   }, [id]);
 
-  if (!selectedProduct) {
+  if (loading) {
     return <Loader />; 
   }
+
 
   const handleAddToCart = () => {
     const { current_price } = selectedProduct;
     const image = gallery[0] || '';
-    const price = current_price.length > 0 ? current_price[0].USD[0] : 0;
+    const price = current_price && current_price.length > 0 ? current_price[0].USD[0] : 0;
 
     addToCart({ ...selectedProduct, quantity, image, price });
     setAddedDetails(true);
@@ -62,9 +73,12 @@ function ProductDetails() {
     }
   };
 
+  if (!selectedProduct.photos || !selectedProduct.current_price) {
+    return null; 
+  }
+
   const { photos, current_price, description, available_quantity, name } = selectedProduct;
 
-  
   const gallery = [];
   for (let i = 0; i < 5; i++) {
     gallery.push(photos.length > 0 ? `https://api.timbu.cloud/images/${photos[i % photos.length].url}` : '');
@@ -101,7 +115,6 @@ function ProductDetails() {
             </div>
 
             <div className='pt-8'>
-              
               <AddtoCartDetails handle={handleAddToCart} addedDetails={addedDetails} />
             </div>
           </section>
