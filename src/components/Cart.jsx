@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import cancel from "../assets/cancel.svg";
 import bin from "../assets/bin.png";
 import { useNavigate } from 'react-router-dom';
@@ -66,7 +66,7 @@ function Cart() {
                 <p className='text-[13px] font-[700]'>$<span className='text-[18px] align-sub'>{cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)}</span>.00</p>
               </section>
 
-              <button onClick={() => { openCheckout(); closeShop(); }} className='w-full px-[18px] py-[12px] md:px-[23px] md:py-[15px] bg-[#e60023] cursor-pointer text-white rounded-[28.13px] mt-6 mb-4 text-[12px] md:text-[16px] delay-100 ease-in-out hover:bg-white hover:text-[#e60023] hover:border-[3px] border-[#e60023]'>
+              <button onClick={() => { openCheckout(); handleCloseShop(); }} className='w-full px-[18px] py-[12px] md:px-[23px] md:py-[15px] bg-[#e60023] cursor-pointer text-white rounded-[28.13px] mt-6 mb-4 text-[12px] md:text-[16px] delay-100 ease-in-out hover:bg-white hover:text-[#e60023] hover:border-[3px] border-[#e60023]'>
                 Proceed to Checkout
               </button>
               <button onClick={handleClearCart} className='w-full px-[18px] py-[12px] md:px-[23px] md:py-[15px] mb-44 bg-gray-200 cursor-pointer text-[#333] rounded-[28.13px] text-[12px] md:text-[16px] delay-100 ease-in-out hover:bg-white hover:text-[#e60023] hover:border-[3px] border-[#e60023]'>
